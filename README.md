@@ -6,7 +6,7 @@ This site showcases my personal projects, experiments, and educational content c
 
 - **TIANMATICS™** is a personal brand name. The name and logo were created by me and are not to be copied or reused without permission.
 - All projects and code shared here are intended for **educational and personal use only**, unless stated otherwise.
-- **TIANMATICS™ is not a registered company**, and I do not claim to hold any official patents or trademarks.
+
 - I am **not responsible** for any illegal or improper use of these projects by third parties.
 
 ---
