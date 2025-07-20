@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIANMATICS™ - AI, ASIC Design, CAD, Card Games by Limon Das</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore TIANMATICS™: cutting-edge AI model development, open-source ASIC design for affordable electronics, advanced Computer-Aided Design (CAD) for drones and engines, and unique print-and-play card games by Limon Das. Connect with tianmatics@gmail.com for inquiries.">
+    <meta name="keywords" content="Tianmatics, tianmatics@gmail.com, Limon Das, AI, Artificial Intelligence, ASIC Design, Open Source Hardware, Electronics, Computer Aided Design, CAD, Drones, Engine Design, Card Games, PNP Games, Technology, Engineering, Innovation, Mechanical Engineer">
+    <meta name="author" content="Limon Das (TIANMATICS)">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:title" content="TIANMATICS™ - AI, ASIC Design, CAD, Card Games by Limon Das">
+    <meta property="og:description" content="Explore TIANMATICS™: cutting-edge AI model development, open-source ASIC design for affordable electronics, advanced Computer-Aided Design (CAD) for drones and engines, and unique print-and-play card games by Limon Das.">
+    <meta property="og:image" content="https://tianmatics.github.io/logo.png"> <!-- Updated image link -->
+    <meta property="og:url" content="https://tianmatics.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TIANMATICS™">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@your_twitter_handle"> <!-- Replace with actual Twitter handle if available -->
+    <meta name="twitter:title" content="TIANMATICS™ - AI, ASIC Design, CAD, Card Games by Limon Das">
+    <meta name="twitter:description" content="Cutting-edge AI, open-source ASIC design, advanced CAD, and unique card games by Limon Das. Discover innovation at TIANMATICS™.">
+    <meta name="twitter:image" content="https://tianmatics.github.io/logo.png"> <!-- Updated image link -->
+    <meta name="twitter:creator" content="@your_twitter_handle"> <!-- Replace with actual Twitter handle if available -->
+
+    <!-- Google Fonts: Inter for body, Jost for brand title and footer -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Jost:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Initial body state to hide content and prevent scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow: hidden; /* Prevent scrolling while loading */
+        }
+        
+        /* Loader Styles */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column; /* Align items vertically */
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.7s ease-out, visibility 0.7s ease-out;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Progress Bar Styles */
+        .progress-bar-container {
+            width: 80%; /* Adjust width as needed */
+            max-width: 400px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px; /* Height of the progress bar */
+            margin-bottom: 15px; /* Space between bar and text */
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%; /* Initial width */
+            background-color: #3498db;
+            border-radius: 10px;
+            transition: width 0.3s ease-out; /* Smooth transition for width change */
+        }
+
+        .progress-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1em;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .loading-message { /* New style for "Loading..." text */
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+
+        /* Main content wrapper, hidden by default */
+        #main-content {
+            display: none;
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+        }
+
+        /* Fixed Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-out;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .navbar.navbar-fixed {
+            transform: translateY(0);
+        }
+        .navbar-brand {
+            font-family: 'Jost', sans-serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-left: 20px;
+            letter-spacing: 1px;
+        }
+        /* Hero Section Styling */
+        .hero {
+            background-image: url('https://tianmatics.github.io/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero h1,
+        .hero p {
+            color: transparent;
+            -webkit-text-stroke: 2px white;
+            text-stroke: 2px white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            transition: all 0.5s ease-in-out;
+            z-index: 2;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 1.5em;
+            letter-spacing: 1px;
+        }
+        /* Content Section Styling */
+        .content-section {
+            padding: 80px 20px;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            position: relative;
+        }
+        .content-section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .content-section h2 {
+            color: black;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        .content-section p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* General Button Styling */
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .section-button {
+            background-color: black;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .section-button:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+        /* Footer Styling */
+        footer {
+            background-color: black;
+            color: white;
+            font-family: 'Jost', sans-serif;
+            padding: 40px 20px;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin-top: 60px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+        }
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        .footer-copyright {
+            font-size: 0.9em;
+            color: white;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; -webkit-text-stroke: 1.5px white; text-stroke: 1.5px white; }
+            .hero p { font-size: 1.1em; -webkit-text-stroke: 1px white; text-stroke: 1px white; }
+            .navbar-brand { font-size: 1.5em; }
+            .content-section { padding: 50px 15px; margin: 30px auto; }
+            .content-section h2 { font-size: 1.8em; }
+            .content-section p { font-size: 1em; }
+            .footer-links { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loading-message">Loading...</div> <!-- New loading message -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content">
+        <!-- Fixed Navbar -->
+        <nav class="navbar" id="mainNavbar">
+            <div class="navbar-brand">TIANMATICS™</div>
+        </nav>
+        <header class="hero">
+            <h1>Welcome to TIANMATICS</h1>
+            <p>Scroll down to explore Tianmatics™ mission.</p>
+        </header>
+        <section class="content-section" id="section-one">
+            <h2>Artificial Intelligence</h2>
+            <p>I am personally developing some artificial intelligence models.I am trying to develop small ai models that can be run easily every where even in browser.</p>
+            <img src="https://tianmatics.github.io/ai.jpg" alt="Illustration of Artificial Intelligence brain with circuits">
+        </section>
+        <section class="content-section" id="section-two">
+            <h2>ASIC Designing</h2>
+            <p>My goal is also to lessen the cost of Electronics devices.Chipsets are the brain of Electronics devices.I am designing some opensourse ASIC's.</p>
+            <img src="https://tianmatics.github.io/processor.jpg" alt="Close-up of a computer processor chip">
+        </section>
+        <section class="content-section" id="section-three">
+            <h2>Computer Aided Design</h2>
+            <p>As a Mechanical Engineer I am also designing some new automated drones,engine .You will find them in github repository.</p>
+            <img src="https://tianmatics.github.io/cad.jpg" alt="3D CAD model of a complex mechanical part or engine">
+        </section>
+        <section class="content-section" id="section-four">
+            <h2>Card Game</h2>
+            <p>I design PNP Cards game in leisure.Some of them has digital version too.</p>
+            <img src="https://tianmatics.github.io/cards.jpg" alt="Collection of custom designed playing cards">
+        </section>
+        <section class="content-section" id="section-five">
+            <h2>Last Words</h2>
+            <p>Feel free to ask any questions. Email: tianmatics[at]gmail[dot]com</p>
+            <a href="https://github.com/tianmatics" class="section-button" target="_blank" rel="noopener noreferrer">Check on Github</a>
+        </section>
+        <footer>
+            <div class="footer-links">
+                <a href="/about-us">About Us</a>
+                <a href="/faq">FAQ</a>
+                <a href="/terms-and-conditions">Terms and Conditions</a>
+            </div>
+            <div class="footer-copyright">
+                © All rights reserved By Limon Das
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const mainContent = document.getElementById('main-content');
+            
+            // --- Image Loading Logic ---
+            const images = Array.from(document.querySelectorAll('#main-content img'));
+            const heroElement = document.querySelector('.hero');
+            const heroBgImageUrl = window.getComputedStyle(heroElement).backgroundImage.slice(5, -2);
+
+            let imagesToLoad = images.length;
+            if (heroBgImageUrl && heroBgImageUrl !== 'none') {
+                imagesToLoad++;
+            }
+            
+            let loadedImages = 0;
+
+            // Function to update the progress bar
+            const updateProgressBar = () => {
+                const progress = (loadedImages / imagesToLoad) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${Math.round(progress)}%`;
+
+                if (loadedImages >= imagesToLoad) {
+                    // All images are loaded, hide loader and show content
+                    // Add a small delay for the progress bar to reach 100% visually
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                        mainContent.style.display = 'block';
+                        document.body.style.overflow = 'auto'; // Restore scrolling
+
+                        // Initialize page animations and scroll behaviors now that content is visible
+                        initializePageScripts();
+                    }, 300); // 300ms delay to see 100%
+                }
+            };
+
+            const onImageLoad = () => {
+                loadedImages++;
+                updateProgressBar();
+            };
+
+            if (imagesToLoad === 0) {
+                // If no images, simulate 100% load immediately
+                loadedImages = 0; // Ensure loadedImages is not negative
+                imagesToLoad = 1; // Prevent division by zero if imagesToLoad is 0
+                updateProgressBar();
+            } else {
+                // Check content images
+                images.forEach(img => {
+                    if (img.complete) {
+                        onImageLoad();
+                    } else {
+                        img.addEventListener('load', onImageLoad);
+                        img.addEventListener('error', onImageLoad); // Count errors too so they don't block the page
+                    }
+                });
+
+                // Check hero background image
+                if (heroBgImageUrl && heroBgImageUrl !== 'none') {
+                    const bgImage = new Image();
+                    bgImage.src = heroBgImageUrl;
+                    bgImage.onload = onImageLoad;
+                    bgImage.onerror = onImageLoad;
+                }
+            }
+
+            // --- Original Page Scripts ---
+            // This function is called only after all images are loaded
+            function initializePageScripts() {
+                const sections = document.querySelectorAll('.content-section');
+                const navbar = document.getElementById('mainNavbar');
+                const heroHeight = window.innerHeight;
+
+                const revealSection = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                };
+
+                const sectionObserver = new IntersectionObserver(revealSection, {
+                    root: null,
+                    threshold: 0.15
+                });
+
+                sections.forEach(section => {
+                    sectionObserver.observe(section);
+                });
+
+                const handleScroll = () => {
+                    if (window.scrollY > heroHeight - 50) {
+                        navbar.classList.add('navbar-fixed');
+                    } else {
+                        navbar.classList.remove('navbar-fixed');
+                    }
+                };
+
+                window.addEventListener('scroll', handleScroll);
+            }
+        });
+    </script>
+</body>
+</html>
+
