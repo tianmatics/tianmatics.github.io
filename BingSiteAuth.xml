@@ -1,10 +1,3 @@
----
-layout: none
-sitemap: false
-permalink: /BingSiteAuth.xml
----
-
-
 <?xml version="1.0"?>
 <users>
 	<user>D840033B806D2D060082537381EB8FD9</user>
