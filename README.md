@@ -12,3 +12,9 @@ This site showcases my personal projects, experiments, and educational content c
 ---
 
 Thanks for visiting! Feel free to explore the repositories and learn from the code.
+
+>**Bitcoin Support Address:** 
+
+```
+bc1py86tpgvcydlqaam8c66v35j2c2j7y0k64v9p85n0gz23xalm65kqpm5an6
+```
