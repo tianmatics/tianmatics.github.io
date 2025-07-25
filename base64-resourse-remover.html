@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Base64 Resources Remover - Clean HTML, CSS & JavaScript Files Online</title>
+    <meta name="title" content="Base64 Resources Remover - Clean HTML, CSS & JavaScript Files Online">
+    <meta name="description" content="Free online tool to remove base64 encoded images and resources from HTML, CSS, and JavaScript files. Clean your code, reduce file size, and improve performance instantly.">
+    <meta name="keywords" content="base64 remover, clean code, remove base64 images, HTML cleaner, CSS optimizer, JavaScript cleaner, code minifier, web development tools, online code editor">
+    <meta name="author" content="Base64 Resources Remover Tool">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/base64-remover">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/base64-remover">
+    <meta property="og:title" content="Base64 Resources Remover - Clean HTML, CSS & JavaScript Files Online">
+    <meta property="og:description" content="Free online tool to remove base64 encoded images and resources from HTML, CSS, and JavaScript files. Clean your code, reduce file size, and improve performance instantly.">
+    <meta property="og:image" content="https://example.com/base64-remover-preview.jpg">
+    <meta property="og:site_name" content="Base64 Resources Remover">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/base64-remover">
+    <meta property="twitter:title" content="Base64 Resources Remover - Clean HTML, CSS & JavaScript Files Online">
+    <meta property="twitter:description" content="Free online tool to remove base64 encoded images and resources from HTML, CSS, and JavaScript files. Clean your code, reduce file size, and improve performance instantly.">
+    <meta property="twitter:image" content="https://example.com/base64-remover-preview.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="application-name" content="Base64 Resources Remover">
+    <meta name="apple-mobile-web-app-title" content="Base64 Remover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Base64 Resources Remover",
+      "description": "Free online tool to remove base64 encoded images and resources from HTML, CSS, and JavaScript files",
+      "url": "https://example.com/base64-remover",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Base64 Resources Remover Tool"
+      },
+      "browserRequirements": "Requires HTML5 and JavaScript",
+      "softwareVersion": "1.0",
+      "datePublished": "2025-01-01",
+      "dateModified": "2025-07-25"
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .intro-section {
+            margin-bottom: 30px;
+        }
+        
+        .benefits {
+            margin-top: 20px;
+        }
+        
+        .benefits h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .help-text {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        footer section {
+            margin-bottom: 30px;
+        }
+        
+        footer h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        footer ol {
+            padding-left: 20px;
+        }
+        
+        footer ol li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        footer ul li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        footer ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .input-section, .output-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.3em;
+            color: #444;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: #667eea;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: vertical;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: #fafafa;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+            background: white;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .file-input-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed #e0e0e0;
+            border-radius: 12px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        .file-input-container:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .file-button {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            padding: 12px 25px;
+            font-size: 14px;
+            border-radius: 25px;
+        }
+        
+        .file-name {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            color: #999;
+            font-weight: 600;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .stat-item {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(102, 126, 234, 0.8);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-button:hover {
+            background: rgba(102, 126, 234, 1);
+        }
+        
+        .output-container {
+            position: relative;
+        }
+        
+        .example {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            textarea {
+                height: 250px;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Base64 Resources Remover</h1>
+            <p class="subtitle">Clean HTML, CSS & JavaScript files by removing base64 encoded resources</p>
+        </header>
+        
+        <section class="intro-section">
+            <div class="example">
+                <div class="example-title">What this tool does:</div>
+                <p>Removes base64 encoded resources (images, data URIs, fonts, etc.) from your HTML, CSS, and JavaScript code and replaces them with <code>/* base64 resources */</code> comments to make your code cleaner, more readable, and easier to maintain.</p>
+                
+                <div class="benefits">
+                    <h3>Benefits:</h3>
+                    <ul>
+                        <li><strong>Reduce file size</strong> - Remove bulky base64 data</li>
+                        <li><strong>Improve readability</strong> - Clean, maintainable code</li>
+                        <li><strong>Better performance</strong> - Faster loading and parsing</li>
+                        <li><strong>Version control friendly</strong> - Easier to track changes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <main>
+            <section class="input-section" aria-label="File Input Section">
+                <div class="section-title">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                    </svg>
+                    Input Code
+                </div>
+                
+                <div class="file-input-container">
+                    <input type="file" id="fileInput" accept=".html,.css,.js,.txt,.xml,.svg,.json" style="display: none;" aria-label="Choose file to clean">
+                    <button class="file-button" onclick="document.getElementById('fileInput').click()" aria-describedby="file-help">
+                        📁 Choose File
+                    </button>
+                    <span class="file-name" id="fileName">No file selected</span>
+                    <small id="file-help" class="help-text">Supported: HTML, CSS, JS, TXT, XML, SVG, JSON</small>
+                </div>
+                
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                
+                <label for="inputCode" class="sr-only">Paste your code here</label>
+                <textarea 
+                    id="inputCode" 
+                    aria-label="Input code textarea"
+                    placeholder="Paste your HTML, CSS, or JavaScript code with base64 resources here...
+
+Example:
+<img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==&quot; alt=&quot;Red dot&quot; />
+
+background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD...');">
+                </textarea>
+            </section>
+            
+            <section class="action-section" aria-label="Process Controls">
+                <div class="button-container">
+                    <button onclick="removeBase64Resources()" aria-describedby="process-help">✨ Remove Base64 Resources</button>
+                    <button class="download-btn" onclick="downloadCleanedFile()" id="downloadBtn" style="display: none;" aria-label="Download cleaned file">
+                        💾 Download Cleaned File
+                    </button>
+                </div>
+                <small id="process-help" class="help-text">Keyboard shortcut: Ctrl+Enter</small>
+            </section>
+            
+            <section class="stats-section" aria-label="Processing Statistics">
+                <div class="stats" id="stats" style="display: none;" role="region" aria-label="Processing results">
+                    <div class="stat-item">
+                        <span class="stat-number" id="removedCount">0</span>
+                        <span class="stat-label">Resources Removed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="savedBytes">0</span>
+                        <span class="stat-label">Bytes Saved</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="compressionRatio">0%</span>
+                        <span class="stat-label">Size Reduction</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="output-section" aria-label="Cleaned Code Output">
+                <div class="section-title">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" />
+                    </svg>
+                    Cleaned Code
+                </div>
+                <div class="output-container">
+                    <label for="outputCode" class="sr-only">Cleaned code output</label>
+                    <textarea 
+                        id="outputCode" 
+                        readonly
+                        aria-label="Cleaned code output"
+                        placeholder="Your cleaned code will appear here after processing...">
+                    </textarea>
+                    <button class="copy-button" onclick="copyToClipboard()" id="copyBtn" style="display: none;" aria-label="Copy cleaned code to clipboard">📋 Copy</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <section class="how-it-works">
+                <h2>How It Works</h2>
+                <ol>
+                    <li><strong>Upload or Paste:</strong> Choose a file or paste your HTML, CSS, or JavaScript code</li>
+                    <li><strong>Process:</strong> Our tool identifies and removes all base64 encoded resources</li>
+                    <li><strong>Download:</strong> Get your cleaned file with base64 data replaced by comments</li>
+                </ol>
+            </section>
+            
+            <section class="supported-formats">
+                <h2>Supported File Types</h2>
+                <p>HTML files (.html), CSS stylesheets (.css), JavaScript files (.js), Text files (.txt), XML documents (.xml), SVG graphics (.svg), JSON data (.json)</p>
+            </section>
+            
+            <section class="use-cases">
+                <h2>Common Use Cases</h2>
+                <ul>
+                    <li>Clean up HTML files with embedded base64 images</li>
+                    <li>Remove base64 fonts from CSS files</li>
+                    <li>Strip base64 data URIs from JavaScript code</li>
+                    <li>Prepare code for version control systems</li>
+                    <li>Reduce file sizes for better performance</li>
+                    <li>Make code more readable for debugging</li>
+                </ul>
+            </section>
+        </footer>
+    </div>
+
+    <script>
+        let currentFileName = '';
+        let processedContent = '';
+        
+        // File input handling
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                currentFileName = file.name;
+                document.getElementById('fileName').textContent = file.name;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('inputCode').value = e.target.result;
+                };
+                reader.readAsText(file);
+            }
+        });
+        
+        function removeBase64Resources() {
+            const input = document.getElementById('inputCode').value;
+            const output = document.getElementById('outputCode');
+            const statsDiv = document.getElementById('stats');
+            const copyBtn = document.getElementById('copyBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            if (!input.trim()) {
+                alert('Please enter some code or select a file to process!');
+                return;
+            }
+            
+            // Regular expressions to match different base64 patterns
+            const patterns = [
+                // Data URIs: data:image/png;base64,... or data:application/pdf;base64,...
+                /data:[^;]+;base64,[A-Za-z0-9+\/=]+/g,
+                // CSS url() with base64
+                /url\s*\(\s*['"]?data:[^;]+;base64,[A-Za-z0-9+\/=]+['"]?\s*\)/g,
+                // src attributes with base64
+                /src\s*=\s*['"]data:[^;]+;base64,[A-Za-z0-9+\/=]+['"]/g,
+                // href attributes with base64
+                /href\s*=\s*['"]data:[^;]+;base64,[A-Za-z0-9+\/=]+['"]/g,
+                // JavaScript strings with base64 (common patterns)
+                /['"]data:[^;]+;base64,[A-Za-z0-9+\/=]+['"]/g
+            ];
+            
+            let processedCode = input;
+            let totalRemoved = 0;
+            let totalBytesSaved = 0;
+            
+            // Process each pattern
+            patterns.forEach(pattern => {
+                const matches = processedCode.match(pattern);
+                if (matches) {
+                    matches.forEach(match => {
+                        totalBytesSaved += match.length;
+                        totalRemoved++;
+                    });
+                    processedCode = processedCode.replace(pattern, '/* base64 resources */');
+                }
+            });
+            
+            // Clean up multiple consecutive comments
+            processedCode = processedCode.replace(/(\/\* base64 resources \*\/\s*){2,}/g, '/* base64 resources */');
+            
+            // Store processed content for download
+            processedContent = processedCode;
+            
+            // Display results
+            output.value = processedCode;
+            
+            // Update statistics
+            const originalSize = input.length;
+            const newSize = processedCode.length;
+            const compressionRatio = originalSize > 0 ? Math.round(((originalSize - newSize) / originalSize) * 100) : 0;
+            
+            document.getElementById('removedCount').textContent = totalRemoved;
+            document.getElementById('savedBytes').textContent = formatBytes(totalBytesSaved);
+            document.getElementById('compressionRatio').textContent = compressionRatio + '%';
+            
+            // Show stats, copy button, and download button
+            statsDiv.style.display = 'flex';
+            copyBtn.style.display = 'block';
+            downloadBtn.style.display = 'inline-block';
+            
+            // Add some visual feedback
+            output.style.background = '#f0fff0';
+            setTimeout(() => {
+                output.style.background = '#fafafa';
+            }, 1000);
+            
+            if (totalRemoved === 0) {
+                alert('No base64 resources found in the provided code.');
+            }
+        }
+        
+        function downloadCleanedFile() {
+            if (!processedContent) {
+                alert('Please process some code first!');
+                return;
+            }
+            
+            // Determine file extension
+            let extension = '.txt';
+            if (currentFileName) {
+                const lastDot = currentFileName.lastIndexOf('.');
+                if (lastDot !== -1) {
+                    extension = currentFileName.substring(lastDot);
+                }
+            }
+            
+            // Create filename for cleaned version
+            const cleanedFileName = currentFileName 
+                ? currentFileName.replace(/(\.[^.]+)$/, '_cleaned$1')
+                : 'cleaned_code' + extension;
+            
+            // Create blob and download
+            const blob = new Blob([processedContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = cleanedFileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Visual feedback
+            const downloadBtn = document.getElementById('downloadBtn');
+            const originalText = downloadBtn.textContent;
+            downloadBtn.textContent = '✅ Downloaded!';
+            downloadBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            
+            setTimeout(() => {
+                downloadBtn.textContent = originalText;
+            }, 2000);
+        }
+        
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+        }
+        
+        function copyToClipboard() {
+            const output = document.getElementById('outputCode');
+            const copyBtn = document.getElementById('copyBtn');
+            
+            output.select();
+            document.execCommand('copy');
+            
+            // Visual feedback
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = '✅ Copied!';
+            copyBtn.style.background = 'rgba(76, 175, 80, 0.8)';
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                copyBtn.style.background = 'rgba(102, 126, 234, 0.8)';
+            }, 2000);
+        }
+        
+        // Allow drag and drop
+        const inputArea = document.getElementById('inputCode');
+        const fileContainer = document.querySelector('.file-input-container');
+        
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.style.borderColor = '#667eea';
+            e.currentTarget.style.background = 'rgba(102, 126, 234, 0.1)';
+        }
+        
+        function handleDragLeave(e) {
+            e.preventDefault();
+            e.currentTarget.style.borderColor = '#e0e0e0';
+            e.currentTarget.style.background = '#fafafa';
+        }
+        
+        function handleDrop(e) {
+            e.preventDefault();
+            e.currentTarget.style.borderColor = '#e0e0e0';
+            e.currentTarget.style.background = '#fafafa';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const file = files[0];
+                currentFileName = file.name;
+                document.getElementById('fileName').textContent = file.name;
+                
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    inputArea.value = e.target.result;
+                };
+                reader.readAsText(file);
+            }
+        }
+        
+        // Add drag and drop to both textarea and file container
+        [inputArea, fileContainer].forEach(element => {
+            element.addEventListener('dragover', handleDragOver);
+            element.addEventListener('dragleave', handleDragLeave);
+            element.addEventListener('drop', handleDrop);
+        });
+        
+        // Keyboard shortcut for processing (Ctrl+Enter)
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Enter') {
+                removeBase64Resources();
+            }
+        });
+    </script>
+</body>
+</html>
