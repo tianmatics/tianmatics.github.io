@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>TexTPad - Free Online Notepad, Text Editor & EditPad Alternative | Write Notes Online</title>
+    <meta name="description" content="TexTPad is a free online notepad and text editor. Write, edit, and save notes online. Best alternative to EditPad, Notepad++, and other text editors. No download required.">
+    <meta name="keywords" content="online notepad, text editor online, editpad, notepad online, free text editor, write notes online, online writing tool, web notepad, text pad, note taking app">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://textpad.com/">
+    <meta property="og:title" content="TexTPad - Free Online Notepad & Text Editor">
+    <meta property="og:description" content="Professional online notepad and text editor. Write, edit, and save your notes online for free. No download required.">
+    <meta property="og:image" content="https://textpad.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://textpad.com/">
+    <meta property="twitter:title" content="TexTPad - Free Online Notepad & Text Editor">
+    <meta property="twitter:description" content="Professional online notepad and text editor. Write, edit, and save your notes online for free.">
+    <meta property="twitter:image" content="https://textpad.com/og-image.jpg">
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TexTPad">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://textpad.com/">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "TexTPad",
+        "description": "Free online notepad and text editor for writing and editing notes online",
+        "url": "https://textpad.com",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Online text editing",
+            "Auto-save functionality", 
+            "Word count",
+            "Character count",
+            "Export options",
+            "Responsive design"
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* Editor Section */
+        .editor-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .editor-toolbar {
+            background: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .toolbar-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #64748b;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .stats {
+            display: flex;
+            gap: 1rem;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .auto-save-indicator {
+            color: #059669;
+            font-size: 0.875rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .auto-save-indicator.show {
+            opacity: 1;
+        }
+
+        #textEditor {
+            width: 100%;
+            min-height: 500px;
+            border: none;
+            padding: 2rem;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: vertical;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: #fafafa;
+            color: #1e293b;
+            outline: none;
+        }
+
+        #textEditor:focus {
+            background: white;
+        }
+
+        /* Features Section */
+        .info-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-section h2 {
+            color: #1e293b;
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .info-section h3 {
+            color: #2563eb;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .info-section p {
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+
+        /* Additional EditPad-like styling */
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .features-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .editor-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .toolbar-group {
+                justify-content: center;
+            }
+
+            #textEditor {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Fullscreen styles */
+        .fullscreen-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fullscreen-mode .editor-toolbar {
+            flex-shrink: 0;
+        }
+
+        .fullscreen-mode #textEditor {
+            flex: 1;
+            min-height: auto;
+            height: auto;
+            border-radius: 0;
+        }
+        .brand-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.25rem;
+        }
+
+        .highlight {
+            background: #dbeafe;
+            padding: 0.125rem 0.25rem;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: #059669;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <a href="#" class="logo">TexTPad</a>
+                <div class="brand-subtitle">Free Online Text Editor</div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#editor">Editor</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#help">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Free Online Notepad & Text Editor</h1>
+            <p>Write, edit, and save your notes online with TexTPad - the best free alternative to EditPad and other text editors. No download required, works in any browser.</p>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <span>💾</span>
+                    <span>Auto-Save</span>
+                </div>
+                <div class="feature-item">
+                    <span>📊</span>
+                    <span>Word Count</span>
+                </div>
+                <div class="feature-item">
+                    <span>📱</span>
+                    <span>Mobile Ready</span>
+                </div>
+                <div class="feature-item">
+                    <span>🔒</span>
+                    <span>Privacy First</span>
+                </div>
+                <div class="feature-item">
+                    <span>⚡</span>
+                    <span>Lightning Fast</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editor Section -->
+        <section class="editor-section" id="editor">
+            <div class="editor-toolbar">
+                <div class="toolbar-group">
+                    <button class="btn" onclick="newDocument()">
+                        <span>📄</span>
+                        New
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadText()">
+                        <span>💾</span>
+                        Download
+                    </button>
+                    <button class="btn btn-outline" onclick="copyText()">
+                        <span>📋</span>
+                        Copy All
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearText()">
+                        <span>🗑️</span>
+                        Clear
+                    </button>
+                    <button class="btn btn-outline" onclick="toggleFullscreen()">
+                        <span id="fullscreenIcon">⛶</span>
+                        <span id="fullscreenText">Fullscreen</span>
+                    </button>
+                </div>
+                
+                <div class="toolbar-group">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span>📝</span>
+                            <span id="wordCount">0 words</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>🔤</span>
+                            <span id="charCount">0 chars</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>📏</span>
+                            <span id="lineCount">1 lines</span>
+                        </div>
+                    </div>
+                    <div class="auto-save-indicator" id="autoSaveIndicator">
+                        <span>✅</span>
+                        <span>Saved</span>
+                    </div>
+                </div>
+            </div>
+
+            <textarea 
+                id="textEditor" 
+                placeholder="Start typing your text here... TexTPad automatically saves your work as you type. Perfect for notes, drafts, code, or any text editing task!"
+                oninput="updateStats(); autoSave();"
+                spellcheck="false"
+            ></textarea>
+        </section>
+
+        <!-- Features Section -->
+        <section class="info-section" id="features">
+            <h2>Why Choose TexTPad as Your Online Text Editor?</h2>
+            
+            <p>TexTPad is a powerful <span class="highlight">online notepad</span> and <span class="highlight">text editor</span> designed to be the perfect alternative to EditPad and other desktop text editors. Write, edit, and manage your text documents entirely in your web browser with professional-grade features.</p>
+
+            <h3>Perfect for Every Use Case</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 1.5rem 0;">
+                <div>
+                    <h4>✏️ Students & Academics</h4>
+                    <ul class="feature-list">
+                        <li>Take lecture notes</li>
+                        <li>Write essays and papers</li>
+                        <li>Organize study materials</li>
+                        <li>Collaborate on projects</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>💼 Professionals</h4>
+                    <ul class="feature-list">
+                        <li>Meeting notes and memos</li>
+                        <li>Draft emails and documents</li>
+                        <li>Quick text editing</li>
+                        <li>Temporary text storage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>👨‍💻 Developers</h4>
+                    <ul class="feature-list">
+                        <li>Code snippets and notes</li>
+                        <li>Documentation drafts</li>
+                        <li>Configuration files</li>
+                        <li>Quick text processing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>✍️ Writers & Creators</h4>
+                    <ul class="feature-list">
+                        <li>Story and article drafts</li>
+                        <li>Creative writing</li>
+                        <li>Blog post preparation</li>
+                        <li>Content planning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="info-section" id="about">
+            <h2>About TexTPad - The Ultimate EditPad Alternative</h2>
+            
+            <p>TexTPad was created to provide a fast, reliable, and feature-rich <strong>online text editor</strong> that matches the functionality of desktop applications like EditPad, Notepad++, and other popular text editors. Our goal is to deliver a professional writing and editing experience directly in your web browser.</p>
+
+            <h3>Why TexTPad Stands Out</h3>
+            <p>Unlike other <span class="highlight">online notepads</span> and <span class="highlight">web-based text editors</span>, TexTPad focuses on providing a clean, distraction-free interface combined with powerful features that professional writers and developers need. We've eliminated the bloat while keeping all the essential functionality.</p>
+
+            <h3>Key Advantages Over Other Online Text Editors</h3>
+            <p>TexTPad offers instant access without downloads, superior performance with fast loading, reliable auto-save protection, and professional features without complexity. Focus on your writing with our clean, EditPad-inspired interface that eliminates distractions while providing all essential functionality.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TexTPad - Free Online Notepad & Text Editor | Best EditPad Alternative | 
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let autoSaveTimeout;
+        
+        // Load saved text on page load
+        window.addEventListener('load', function() {
+            const savedText = localStorage.getItem('textpad-content');
+            if (savedText) {
+                document.getElementById('textEditor').value = savedText;
+                updateStats();
+            }
+        });
+
+        function updateStats() {
+            const text = document.getElementById('textEditor').value;
+            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            const chars = text.length;
+            const lines = text === '' ? 1 : text.split('\n').length;
+            
+            document.getElementById('wordCount').textContent = `${words} words`;
+            document.getElementById('charCount').textContent = `${chars} chars`;
+            document.getElementById('lineCount').textContent = `${lines} lines`;
+        }
+
+        function autoSave() {
+            const text = document.getElementById('textEditor').value;
+            localStorage.setItem('textpad-content', text);
+            
+            // Show save indicator
+            const indicator = document.getElementById('autoSaveIndicator');
+            indicator.classList.add('show');
+            
+            // Clear previous timeout
+            clearTimeout(autoSaveTimeout);
+            
+            // Hide indicator after 2 seconds
+            autoSaveTimeout = setTimeout(() => {
+                indicator.classList.remove('show');
+            }, 2000);
+        }
+
+        function newDocument() {
+            if (document.getElementById('textEditor').value.trim() !== '' && 
+                !confirm('Are you sure you want to create a new document? Any unsaved changes will be lost.')) {
+                return;
+            }
+            document.getElementById('textEditor').value = '';
+            localStorage.removeItem('textpad-content');
+            updateStats();
+            document.getElementById('textEditor').focus();
+        }
+
+        function clearText() {
+            if (confirm('Are you sure you want to clear all text? This action cannot be undone.')) {
+                document.getElementById('textEditor').value = '';
+                localStorage.removeItem('textpad-content');
+                updateStats();
+                document.getElementById('textEditor').focus();
+            }
+        }
+
+        function downloadText() {
+            const text = document.getElementById('textEditor').value;
+            if (text.trim() === '') {
+                alert('Please enter some text before downloading.');
+                return;
+            }
+            
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `textpad-document-${new Date().toISOString().split('T')[0]}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function toggleFullscreen() {
+            const editorSection = document.querySelector('.editor-section');
+            const fullscreenIcon = document.getElementById('fullscreenIcon');
+            const fullscreenText = document.getElementById('fullscreenText');
+            
+            if (editorSection.classList.contains('fullscreen-mode')) {
+                // Exit fullscreen
+                editorSection.classList.remove('fullscreen-mode');
+                fullscreenIcon.textContent = '⛶';
+                fullscreenText.textContent = 'Fullscreen';
+                document.body.style.overflow = '';
+            } else {
+                // Enter fullscreen
+                editorSection.classList.add('fullscreen-mode');
+                fullscreenIcon.textContent = '⛷';
+                fullscreenText.textContent = 'Exit';
+                document.body.style.overflow = 'hidden';
+                document.getElementById('textEditor').focus();
+            }
+        }
+            const text = document.getElementById('textEditor').value;
+            if (text.trim() === '') {
+                alert('No text to copy.');
+                return;
+            }
+            
+            navigator.clipboard.writeText(text).then(() => {
+                // Temporary visual feedback
+                const btn = event.target.closest('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<span>✅</span> Copied!';
+                btn.style.background = '#059669';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                document.getElementById('textEditor').select();
+                document.execCommand('copy');
+                alert('Text copied to clipboard!');
+            });
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+S or Cmd+S to trigger save
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                autoSave();
+            }
+            
+            // Ctrl+N or Cmd+N for new document
+            if ((e.ctrlKey || e.metaKey) && e.key === 'n') {
+                e.preventDefault();
+                newDocument();
+            }
+        });
+
+        // Auto-focus on the text editor
+        document.getElementById('textEditor').focus();
+
+        // Prevent data loss on page unload
+        window.addEventListener('beforeunload', function(e) {
+            const text = document.getElementById('textEditor').value;
+            if (text.trim() !== '') {
+                autoSave();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
