@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicode Text Styler - Bold, Underline, and Special Fonts</title>
+    <meta name="description" content="A free tool to convert your text into bold, underlined, and various stylish Unicode fonts. Copy and paste for social media, SEO, and more.">
+    <meta name="keywords" content="unicode, text styler, bold text, underline text, font generator, copy paste fonts, twitter fonts, instagram fonts">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tianmatics">
+    <meta name="twitter:title" content="Unicode Text Styler by Tianmatics">
+    <meta name="twitter:description" content="Easily convert text to bold, underline, and other cool Unicode fonts.">
+    <meta name="twitter:image" content="https://tianmatics.github.io/logo.png">
+
+    <!-- Open Graph Meta Tags (for Facebook, etc.) -->
+    <meta property="og:title" content="Unicode Text Styler by Tianmatics">
+    <meta property="og:description" content="Easily convert text to bold, underline, and other cool Unicode fonts.">
+    <meta property="og:image" content="https://tianmatics.github.io/logo.png">
+    <meta property="og:url" content="https://tianmatics.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .header img {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+        .output-area {
+            background-color: #e9ecef;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 150px;
+            font-family: monospace;
+        }
+        .btn-custom {
+            margin: 0.25rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <a href="https://tianmatics.github.io/"><img src="https://tianmatics.github.io/logo.png" alt="Tianmatics Logo"></a>
+            <h1>Unicode Text Styler</h1>
+            <p class="lead">Create bold, underlined, and special Unicode text for social media and more.</p>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputText" class="form-label">Enter your text here:</label>
+            <textarea class="form-control" id="inputText" rows="4" placeholder="Type or paste your text..."></textarea>
+        </div>
+
+        <div class="mb-3 text-center">
+            <button class="btn btn-primary btn-custom" onclick="applyStyle('bold')">Bold</button>
+            <button class="btn btn-secondary btn-custom" onclick="applyStyle('underline')">Underline</button>
+            <button class="btn btn-success btn-custom" onclick="applyStyle('unicode')">Special Font</button>
+        </div>
+
+        <div class="mb-3">
+            <label for="outputText" class="form-label">Your styled text:</label>
+            <div id="outputText" class="output-area"></div>
+        </div>
+        
+        <div class="text-center">
+            <button class="btn btn-info" onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 <a href="https://tianmatics.github.io/">Tianmatics</a>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const unicodeMap = {
+            'a': '𝐚', 'b': '𝐛', 'c': '𝐜', 'd': '𝐝', 'e': '𝐞', 'f': '𝐟', 'g': '𝐠', 'h': '𝐡', 'i': '𝐢', 'j': '𝐣', 'k': '𝐤', 'l': '𝐥', 'm': '𝐦', 'n': '𝐧', 'o': '𝐨', 'p': '𝐩', 'q': '𝐪', 'r': '𝐫', 's': '𝐬', 't': '𝐭', 'u': '𝐮', 'v': '𝐯', 'w': '𝐰', 'x': '𝐱', 'y': '𝐲', 'z': '𝐳',
+            'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇', 'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌', 'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐', 'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙',
+            '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟔', '7': '𝟕', '8': '𝟖', '9': '𝟗'
+        };
+
+        function applyStyle(style) {
+            const inputText = document.getElementById('inputText').value;
+            const outputTextElement = document.getElementById('outputText');
+            let outputText = '';
+
+            switch (style) {
+                case 'bold':
+                    outputText = `<strong>${inputText}</strong>`;
+                    break;
+                case 'underline':
+                    outputText = `<u>${inputText}</u>`;
+                    break;
+                case 'unicode':
+                    outputText = inputText.split('').map(char => unicodeMap[char] || char).join('');
+                    break;
+            }
+            outputTextElement.innerHTML = outputText;
+        }
+
+        function copyToClipboard() {
+            const outputTextElement = document.getElementById('outputText');
+            const textToCopy = outputTextElement.innerText;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    alert('Text copied to clipboard!');
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Text copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>
